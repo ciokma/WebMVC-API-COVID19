@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "GetCovidCases by Mauricio Perez";
+}
+
+
+@*<script src="~/Scripts/jquery-1.10.2.js"></script>*@
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+
+<script src="~/Scripts/alertify.min.js"></script>
+<link href="~/Content/alertifyjs/alertify.min.css" rel="stylesheet" />
+
+<h2>TOP 10 COVID CASES</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6">
+                <select name="ddlRegions" id="ddlRegions" class="form-control form-control-lg">
+                    <option value="REGION">REGION</option>
+                </select>
+            </div>
+            <div class="col-md-5">
+                <button type="button" class="btn  btn-lg btn-block btn-outline-secondary" id="btnReport">Report</button>
+               
+            </div>
+            <div class="col-md-1">
+                <div class="spinner-border" role="status" style="display:none" id="loader">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+
+            <div class="col-md-4">
+                <button type="button" class="btn  btn-lg btn-block btn-secondary" id="btnXML">XML</button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn  btn-lg btn-block btn-secondary" id="btnJSON">JSON</button>
+
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn  btn-lg btn-block btn-secondary" id="btnCSV">CSV</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="tblMain">
+    <table class="table" id="gridTable">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" id="regionHeader"><b>REGION</b></th>
+                <th scope="col" id="casesHeader"><b>CASES</b></th>
+                <th scope="col" id="deathHeader"><b>DEATH</b></th>
+
+            </tr>
+        </thead>
+        <tbody id="bodyTable"></tbody>
+    </table>
+</div>
+<script src="~/Scripts/custom/customCode.js"></script>
